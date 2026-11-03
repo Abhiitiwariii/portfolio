@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhilash Tiwari — AI Product Manager</title>
+<meta name="description" content="Abhilash Tiwari — AI product manager working at the intersection of AI governance and regulated banking.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main>
+
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <div class="avatar">
+        <img src="photo.jpg" alt="Abhilash Tiwari" id="avatarImg">
+        <div class="avatar-fallback" id="avatarFallback" aria-hidden="true">AT</div>
+      </div>
+      <h1 class="hero-name">Abhilash Tiwari</h1>
+      <p class="hero-tagline">Build simple AI products for complex problems</p>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section"><span></span></a>
+  </section>
+
+  <section id="about" class="about reveal">
+    <div class="section-inner">
+      <p class="eyebrow">About</p>
+      <p class="about-text">I work at the intersection of AI product management and AI governance in regulated banking, where the hard problem isn't building a model — it's shipping AI that risk, compliance, and regulators will actually trust.</p>
+      <p class="about-text">My focus: turning governance and model-risk requirements into product — controls, data-quality guardrails, and observability that let AI move from pilot to production without breaking regulatory obligations. I translate dense regulatory expectations into concrete product requirements, acceptance criteria, and controls that engineering and risk teams can both sign off on. That bilingual fluency — regulation on one side, AI systems on the other — is where I'm strongest.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="experience reveal">
+    <div class="section-inner">
+      <p class="eyebrow">Experience</p>
+
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Product Manager</h3>
+              <span class="timeline-meta">HSBC &middot; 2026 – Present</span>
+            </div>
+            <p>Own product-adjacent delivery for a regulated data-controls initiative: define the problem, shape the roadmap with risk, data, and engineering stakeholders, and translate ambiguous requirements into prioritized, testable controls.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Data Product Manager</h3>
+              <span class="timeline-meta">Accenture &middot; 2022 – 2026</span>
+            </div>
+            <p>Led credit-risk and regulatory reporting product delivery, translating IFRS9/ECL requirements into scalable data features and improving reporting accuracy ~25% through validation frameworks I helped define. Collaborated with stakeholders on business needs and data sources, improving data accuracy by 20%.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Business Analyst</h3>
+              <span class="timeline-meta">TCS &middot; 2016 – 2021</span>
+            </div>
+            <p>Handled the Loans module across a team of 20. Secured several Star Team Awards for CCDP audits, quarter-end branch-level merger issue resolution, and resolving complex CBS operations across multiple branches.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow-light">Contact</p>
+      <h2 class="contact-heading">Let's build something trustworthy.</h2>
+      <p class="contact-sub">Open to conversations on AI governance, AI product management, and delivery in regulated industries.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:tabhilash19@gmail.com">Get in touch</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/abhilashtiwari/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn btn-outline" href="resume.pdf" download id="resumeBtn">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year">2026</span> Abhilash Tiwari</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var avatarImg = document.getElementById('avatarImg');
+  var avatarFallback = document.getElementById('avatarFallback');
+  avatarImg.addEventListener('error', function () {
+    avatarImg.style.display = 'none';
+    avatarFallback.style.display = 'flex';
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+</script>
+
+</body>
+</html>
